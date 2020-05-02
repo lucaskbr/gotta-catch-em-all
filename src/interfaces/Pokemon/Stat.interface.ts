@@ -3,6 +3,6 @@ export interface Stat {
     name: string;
     url: string;
   };
-  base_stat: number;
+  baseStat: number;
   effort: number;
 }

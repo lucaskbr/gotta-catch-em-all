@@ -1,4 +1,4 @@
-export interface Sprite {
+export interface SpritesResponse {
   back_default: string;
   back_female: string;
   back_shiny: string;
