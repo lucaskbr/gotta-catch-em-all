@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
+import { darken } from 'polished';
+import { handlePokemonTypeColor } from './handleColor';
 
-export default createGlobalStyle`
+const GlobalStyle = createGlobalStyle<{ background?: string }>`
   * {
     margin: 0;
     padding: 0;
@@ -8,7 +10,10 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background: #F0F2F5 ;
+    background: ${(props) =>
+      props.background
+        ? darken(0.1, handlePokemonTypeColor(props.background))
+        : '#E7E9F5'};
     -webkit-font-smoothing: antialiased
   }
   body, input, button {
@@ -25,3 +30,5 @@ export default createGlobalStyle`
   }
 
 `;
+
+export default GlobalStyle;

@@ -25,7 +25,7 @@ const Header: React.FC<Prop> = (props) => {
       <Form onSubmit={handleForm}>
         <Search
           type="text"
-          placeholder="Pikachu"
+          placeholder="Example: Pikachu or 25"
           value={search}
           onChange={(event) => setSearch(event.target.value)}
         />

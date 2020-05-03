@@ -36,15 +36,17 @@ function spritesMapper(data: SpritesResponse): Sprites {
 }
 
 function typesMapper(data: TypeResponse[]): Type[] {
-  return data.map(
-    (typeResponse: TypeResponse): Type => ({
-      info: {
-        name: typeResponse.type.name,
-        url: typeResponse.type.url,
-      },
-      slot: typeResponse.slot,
-    }),
-  );
+  return data
+    .sort((a, b) => (a.slot > b.slot ? 1 : -1))
+    .map(
+      (typeResponse: TypeResponse): Type => ({
+        info: {
+          name: typeResponse.type.name,
+          url: typeResponse.type.url,
+        },
+        slot: typeResponse.slot,
+      }),
+    );
 }
 
 function abilitiesMapper(data: AbilityRespose[]): Ability[] {
