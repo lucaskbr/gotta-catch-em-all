@@ -3,8 +3,8 @@ import React, { FormEvent, useState } from 'react';
 import { Container, Logo, Form, Search, SearchButton } from './styles';
 import PokedexImg from '../../assets/pokedex.png';
 import pokeapi from '../../services/pokeapi';
-import fromResponseToPokemon from '../../utils/mappers/responseMappers/fromPokemonResponseToPokemon';
 import { Pokemon } from '../../interfaces/Pokemon/index.interface';
+import fromResponseToPokemon from '../../utils/mappers/responseMappers/fromResponseToPokemon';
 
 type Prop = {};
 
