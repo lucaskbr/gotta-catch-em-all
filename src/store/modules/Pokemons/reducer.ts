@@ -9,22 +9,23 @@ import {
 export const initialState: PokemonsState = {
   loading: false,
   errors: undefined,
-  pokemons: null,
+  list: null,
+  next: null,
+  previous: null,
 };
 
-export default function pokemons(
+export default function pokemonsReducer(
   state = initialState,
   action: PokemonsActionTypes,
-): PokemonsState {
+): PokemonsState | void {
   switch (action.type) {
     case GET_POKEMONS_REQUEST: {
-      console.log('deeeeu2');
-      break;
-      // return { ...state, loading: true };
+      return { ...state, loading: true };
     }
     case GET_POKEMONS_SUCCESS: {
-      break;
-      // return { ...state, loading: false, list: action.payload };
+      const { list, previous, next } = action.payload;
+      console.log(list);
+      return { loading: true, list, previous, next };
     }
     case GET_POKEMONS_ERROR: {
       break;

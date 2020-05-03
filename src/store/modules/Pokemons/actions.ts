@@ -5,17 +5,20 @@ import {
   GET_POKEMONS_ERROR,
 } from './types';
 
-export function getPokemonsRequest(payload: any): PokemonsActionTypes {
+export function getPokemonsRequest(): PokemonsActionTypes {
   return {
     type: GET_POKEMONS_REQUEST,
-    payload,
   };
 }
 
-export function getPokemonsSuccess(payload: any): PokemonsActionTypes {
+export function getPokemonsSuccess(
+  list: any,
+  next: string,
+  previous: string,
+): PokemonsActionTypes {
   return {
     type: GET_POKEMONS_SUCCESS,
-    payload,
+    payload: { list, next, previous },
   };
 }
 

@@ -1,14 +1,9 @@
-export interface Pokemons {
-  list: {
-    name: string;
-    url: string;
-  }[];
-  previous: string | null;
-  next: string | null;
-}
+import { Pokemon } from '../../../interfaces/Pokemon/index.interface';
 
 export interface PokemonsState {
-  pokemons: Pokemons | null;
+  list: Pokemon[] | null;
+  previous: string | null;
+  next: string | null;
   loading: boolean;
   errors?: string;
 }
@@ -19,7 +14,6 @@ export const GET_POKEMONS_ERROR = '@pokemons/GET_POKEMONS_ERROR';
 
 interface GetPokemonsRequestAction {
   type: typeof GET_POKEMONS_REQUEST;
-  payload: any;
 }
 
 interface GetPokemonsSuccessAction {
