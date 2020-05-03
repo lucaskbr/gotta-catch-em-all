@@ -8,9 +8,9 @@ export interface PokemonsState {
   errors?: string;
 }
 
-export const GET_POKEMONS_REQUEST = '@pokemons/GET_POKEMONS_REQUEST';
-export const GET_POKEMONS_SUCCESS = '@pokemons/GET_POKEMONS_SUCCESS';
-export const GET_POKEMONS_ERROR = '@pokemons/GET_POKEMONS_ERROR';
+export const GET_POKEMONS_REQUEST = '@pokemons/GET_REQUEST';
+export const GET_POKEMONS_SUCCESS = '@pokemons/GET_SUCCESS';
+export const GET_POKEMONS_ERROR = '@pokemons/GET_ERROR';
 
 interface GetPokemonsRequestAction {
   type: typeof GET_POKEMONS_REQUEST;

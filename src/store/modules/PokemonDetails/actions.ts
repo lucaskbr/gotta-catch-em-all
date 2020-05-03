@@ -4,22 +4,31 @@ import {
   GET_POKEMON_DETAILS_SUCCESS,
   GET_POKEMON_DETAILS_ERROR,
 } from './types';
+import { Pokemon } from '../../../interfaces/Pokemon/index.interface';
 
-export function getPokemonsRequest(payload: any): PokemonDetailsActionTypes {
+export function getPokemonDetailRequest(
+  id: string | number,
+): PokemonDetailsActionTypes {
   return {
     type: GET_POKEMON_DETAILS_REQUEST,
-    payload,
+    payload: {
+      id,
+    },
   };
 }
 
-export function getPokemonsSuccess(payload: any): PokemonDetailsActionTypes {
+export function getPokemonDetailSuccess(
+  pokemon: Pokemon,
+): PokemonDetailsActionTypes {
   return {
     type: GET_POKEMON_DETAILS_SUCCESS,
-    payload,
+    payload: {
+      pokemon,
+    },
   };
 }
 
-export function getPokemonsError(payload: any): PokemonDetailsActionTypes {
+export function getPokemonDetailError(payload: any): PokemonDetailsActionTypes {
   return {
     type: GET_POKEMON_DETAILS_ERROR,
     payload,

@@ -12,12 +12,12 @@ const Home: React.FC = () => {
   const rootState = useSelector<RootState, RootState>((state) => state);
 
   useEffect(() => {
-    if (rootState.pokemons.list !== null) return;
+    if (rootState.pokemons.list) return;
     dispatch(getPokemonsRequest());
   }, []);
 
-  function handleClick(pokemonName: string | number): void {
-    history.push(`/details/${pokemonName}`);
+  function handleClick(id: string | number): void {
+    history.push(`/details/${id}`);
   }
 
   return (

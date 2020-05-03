@@ -16,15 +16,16 @@ export default function pokemonDetails(
   state = initialState,
   action: PokemonDetailsActionTypes,
 ): PokemonDetailsState {
-  switch (action.type) {
+  const { type, payload } = action;
+  switch (type) {
     case GET_POKEMON_DETAILS_REQUEST: {
       console.log('deeeeu3');
       break;
       // return { ...state, loading: true };
     }
     case GET_POKEMON_DETAILS_SUCCESS: {
-      break;
-      // return { ...state, loading: false, list: action.payload };
+      console.log(payload.pokemon);
+      return { loading: false, pokemon: payload.pokemon };
     }
     case GET_POKEMON_DETAILS_ERROR: {
       break;

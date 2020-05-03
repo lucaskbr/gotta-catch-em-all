@@ -6,22 +6,24 @@ export interface PokemonDetailsState {
   errors?: string;
 }
 
-export const GET_POKEMON_DETAILS_REQUEST =
-  '@pokemonDetails/GET_POKEMON_REQUEST';
+export const GET_POKEMON_DETAILS_REQUEST = '@pokemonDetails/GET_REQUEST';
 
-export const GET_POKEMON_DETAILS_SUCCESS =
-  '@pokemonDetails/GET_POKEMON_SUCCESS';
+export const GET_POKEMON_DETAILS_SUCCESS = '@pokemonDetails/GET_SUCCESS';
 
-export const GET_POKEMON_DETAILS_ERROR = '@pokemonDetails/GET_POKEMON_ERROR';
+export const GET_POKEMON_DETAILS_ERROR = '@pokemonDetails/GET_ERROR';
 
 interface GetPokemonsDetailsRequestAction {
   type: typeof GET_POKEMON_DETAILS_REQUEST;
-  payload: any;
+  payload: {
+    id: string | number;
+  };
 }
 
 interface GetPokemonsDetailsSuccessAction {
   type: typeof GET_POKEMON_DETAILS_SUCCESS;
-  payload: any;
+  payload: {
+    pokemon: Pokemon;
+  };
 }
 
 interface GetPokemonsDetailsErrorAction {

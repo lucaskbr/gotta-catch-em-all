@@ -3,5 +3,5 @@ import { PokemonDetailsState } from '../../store/modules/PokemonDetails/types';
 
 export interface RootState {
   pokemons: PokemonsState;
-  pokemonDetail: PokemonDetailsState;
+  pokemonDetails: PokemonDetailsState;
 }
