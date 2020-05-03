@@ -1,13 +1,13 @@
 import { Pokemon } from '../../../interfaces/Pokemon/index.interface';
 import { StatResponse } from '../../../interfaces/PokemonResponse/StatResponse.interface';
 import { Stat } from '../../../interfaces/Pokemon/Stat.interface';
-import { PokemonResponse } from '../../../interfaces/PokemonResponse/index.interface';
 import { SpritesResponse } from '../../../interfaces/PokemonResponse/SpritesResponse.interface';
 import { Sprites } from '../../../interfaces/Pokemon/Sprites.interface';
 import { TypeResponse } from '../../../interfaces/PokemonResponse/TypeResponse.interface';
 import { Type } from '../../../interfaces/Pokemon/Type.interface';
 import { AbilityRespose } from '../../../interfaces/PokemonResponse/AbilityResponse.interface';
 import { Ability } from '../../../interfaces/Pokemon/Ability.interface';
+import { PokemonResponse } from '../../../interfaces/PokemonResponse/index.interface';
 
 function statsMapper(data: StatResponse[]): Stat[] {
   return data.map(
@@ -61,7 +61,6 @@ function abilitiesMapper(data: AbilityRespose[]): Ability[] {
 }
 
 function fromResponseToPokemon(data: PokemonResponse): Pokemon {
-  console.log(data);
   const pokemon: Pokemon = {
     id: data.id,
     name: data.name,
