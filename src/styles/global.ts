@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle<{ background?: string }>`
       props.background
         ? darken(0.1, handlePokemonTypeColor(props.background))
         : '#E7E9F5'};
-    -webkit-font-smoothing: antialiased
+    -webkit-font-smoothing: antialiased;
   }
   body, input, button {
     font: 16px "Open sans", sans-serif;
