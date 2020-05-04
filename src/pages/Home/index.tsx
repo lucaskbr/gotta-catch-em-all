@@ -16,13 +16,23 @@ const Home: React.FC = () => {
     dispatch(getPokemonsRequest());
   }, []);
 
-  function handleClick(id: string | number): void {
+  async function handleNext(): Promise<void> {
+    const { next } = rootState.pokemons;
+    dispatch(getPokemonsRequest(next));
+  }
+
+  async function handlePrevious(): Promise<void> {
+    const { previous } = rootState.pokemons;
+    if (!previous) return;
+    dispatch(getPokemonsRequest(previous));
+  }
+
+  async function handleClick(id: string | number): Promise<void> {
     history.push(`/details/${id}`);
   }
 
   return (
     <Container>
-      <div>Home</div>
       <PokemonList>
         {rootState.pokemons.list?.map((pokemon) => (
           <CardPokemon
@@ -31,6 +41,8 @@ const Home: React.FC = () => {
           />
         ))}
       </PokemonList>
+      <button onClick={handlePrevious}>Previous</button>
+      <button onClick={handleNext}>Next</button>
     </Container>
   );
 };
