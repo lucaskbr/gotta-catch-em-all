@@ -3,13 +3,15 @@ import styled from 'styled-components';
 export const Container = styled.div`
   height: 100%;
   width: 100%;
-  background: #fff;
+  background: #f0f4f9;
   border: 1px solid transparent;
   border-radius: 5px;
   display: flex;
-  place-content: center;
+  align-items: center;
+  justify-content: center;
   padding: 5px;
   margin: 5px;
+  min-width: 225px;
   max-width: 250px;
 `;
 

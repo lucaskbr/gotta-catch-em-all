@@ -22,32 +22,28 @@ interface DetailPokemonProps {
 const DetailPokemon: React.FC<DetailPokemonProps> = ({
   pokemon,
 }: DetailPokemonProps) => {
+  async function onClickType(): Promise<void> {
+    console.log('teste');
+  }
+
   return (
     <Container>
       <Header>
-        <Characteristics>
-          <h3>{`#${pokemon?.id}`}</h3>
-          <h6>
-            <strong>Height:</strong>
-            {` ${pokemon?.height}`}
-          </h6>
-          <h6>
-            <strong>Weight:</strong>
-            {` ${pokemon?.weight}`}
-          </h6>
-        </Characteristics>
         <PokemonImage>
           <img
             src={`https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`}
             alt="teste"
           />
+          <h3>{`#${pokemon?.id}`}</h3>
           <h1>{pokemon?.name}</h1>
+
           <Types>
             {pokemon.types.map((type) => (
-              <PokemonType type={type.info.name} />
+              <PokemonType type={type.info.name} onClick={onClickType} />
             ))}
           </Types>
         </PokemonImage>
+
         <Status>
           <BaseStatus>Base status:</BaseStatus>
           {pokemon.stats.map((stat) => (
@@ -55,7 +51,6 @@ const DetailPokemon: React.FC<DetailPokemonProps> = ({
           ))}
         </Status>
       </Header>
-      <Body />
     </Container>
   );
 };
@@ -71,3 +66,17 @@ export default DetailPokemon;
         ))}
       </Abilities>
  */
+
+/**
+  * <Characteristics>
+          <h6>
+            <strong>Height:</strong>
+            {` ${pokemon?.height}`}
+          </h6>
+          <h6>
+            <strong>Weight:</strong>
+            {` ${pokemon?.weight}`}
+          </h6>
+        </Characteristics>
+
+  */
